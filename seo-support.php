@@ -11,6 +11,8 @@ defined('ABSPATH') or die('No script kiddies please!');
 // Include necessary files
 require_once plugin_dir_path(__FILE__) . 'includes/sitemap-generator.php';
 require_once plugin_dir_path(__FILE__) . 'admin/settings-page.php';
+require_once __DIR__ . '/admin/schema-settings.php';
+require_once __DIR__ . '/includes/schemamarkup-woocommerce.php';
 require_once plugin_dir_path(__FILE__) . 'admin/robots-editor.php';
 require_once plugin_dir_path(__FILE__) . 'includes/meta-fields.php';
 require_once __DIR__ . '/includes/indexnow.php';
@@ -27,7 +29,7 @@ if (!wp_next_scheduled('seosupport_daily_sitemap')) {
     wp_schedule_event(time(), 'daily', 'seosupport_daily_sitemap');
 }
 
-// Podpięcie do cron hooka
+// Bind to cron hooka
 add_action('seosupport_daily_sitemap', 'seosupport_generate_sitemap');
 
 register_deactivation_hook(__FILE__, function () {
