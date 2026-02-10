@@ -60,6 +60,24 @@ Typical values:
   - https://schema.org/FreeReturn
   - https://schema.org/ReturnFeesCustomerResponsibility
 
+
+== WooCommerce Shipping Details (Schema) ==
+
+SEO Support can optionally add `shippingDetails` to WooCommerce Product offers to improve Google Merchant listings.
+
+Shipping Details describe delivery cost and time for structured data only.
+They do not affect WooCommerce checkout or shipping calculations.
+
+Fields explanation:
+
+- Destination country: 2-letter country code (example: SE, DE)
+- Currency: ISO currency code (example: SEK, EUR)
+- Shipping rate: fixed shipping cost (use 0 for free shipping)
+- Handling time: order processing time before dispatch (days)
+- Transit time: delivery time after dispatch (days)
+
+These values are applied globally to all WooCommerce products.
+
 == Installation ==
 
 1. Upload the plugin folder to `/wp-content/plugins/seo-support`
